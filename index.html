@@ -2,14 +2,41 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="style.css">
         
-        <title>Pig Game</title>
+        <title>Dice  Game</title>
     </head>
 
     <body>
+
+           
+        <audio id="intrest">
+            <source src="interestpoyendi.mp3" type="audio/ogg">
+            <source src="interestpoyendi.mp3" type="audio/mpeg">
+            
+          </audio>
+          <audio id="vivekam">
+            <source src="vivekam.mp3" type="audio/ogg">
+            <source src="vivekam.mp3" type="audio/mpeg">
+            
+          </audio>   
+
+        <audio id="winners">
+            <source src="ChillBroRingtone.mp3" type="audio/ogg">
+            <source src="ChillBroRingtone.mp3" type="audio/mpeg">
+            
+          </audio>
+
+        <audio id="myAudio">
+            <source src="bobysound.mp3" type="audio/ogg">
+            <source src="bobysound.mp3" type="audio/mpeg">
+            
+          </audio>
+
+       
         <div class="wrapper clearfix">
             <div class="player-0-panel active">
                 <div class="player-name" id="name-0">Player 1</div>
@@ -30,12 +57,31 @@
             </div>
             <input type="number" class="final-score" placeholder="enter final score">
             <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
-            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            <button class="btn-roll" onclick="playAudio()"><i class="ion-ios-loop"></i>Roll dice</button>
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
             <img src="dice-5.png" alt="Dice" class="dice-1"> 
+            <p><img class="rohit " src="rohit.gif" height="300px"></p>
             <img src="dice-5.png" alt="Dice" class="dice-2">
         </div>
-       
+        <script>
+            
+
+//             var aud = document.getElementById('myAudio');
+// aud.addEventListener("ended", function(){
+//     this.currentTime = 0;
+//     this.pause();
+// });
+// function playAudio() {
+//     var audio = document.getElementById('audio1');
+//     if (audio.pause()) {
+//         audio.play();
+//     }else{
+//         audio.pause();
+//         audio.currentTime = 0
+//     }
+// }
+
+        </script>
         <script src="app.js"></script>
     </body>
 </html>

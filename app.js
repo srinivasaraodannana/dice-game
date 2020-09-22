@@ -1,4 +1,38 @@
+$(document).ready(function(){
+ 
+   
+    $("p").hide();
+  
+});
+
+
 alert('Instructions ==>you must enter the final score first.then roll the dice.if you anyone get 1 on any dice.he will lose his chance and no score will add to him.if he hold after rolled dice  that score will added to his total.if hold without roll he will lose his chance.And finally who first scored the target is the winner.');
+
+const x = document.getElementById("myAudio"); 
+            
+function playAudio() { 
+ 
+   x.pause();
+   x.currentTime = 0;
+
+  x.play(); 
+  
+}
+function stop(){
+   const x = document.getElementById("myAudio");
+  const y =document.getElementById("intrest");
+  const z =document.getElementById("vivekam");
+x.pause();
+x.currentTime = 0;
+y.pause();
+y.currentTime = 0;
+z.pause();
+z.currentTime = 0;
+const a = document.getElementById("winners"); 
+a.pause();
+a.currentTime=0;
+}
+
 
 
 
@@ -24,6 +58,11 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
        } 
     else {
+        const x = document.getElementById("intrest"); 
+        stop();
+        x.currentTime = 0;     
+      
+        x.play();   
         nextPlayer();
        }
        }});
@@ -45,20 +84,40 @@ function nextPlayer() {
     if (score[activePlayer] >= finalScore)
     {
         document.querySelector('#name-' + activePlayer).textContent = 'winner!';
+        const x = document.getElementById("winners"); 
+         stop();
+        x.play();
+        
         document.querySelector('.player-0-panel').classList.remove('active');
         document.querySelector('.player-1-panel').classList.remove('active');
         document.querySelector('.dice-2').style.display = 'none';
+        $(document).ready(function(){
+            $("p").show();
+        });
        document.querySelector('.dice-1').style.display = 'none';
         againPlaying=false;
       
         }
      else{
+        const x = document.getElementById("vivekam"); 
+       
+        stop();
+        x.currentTime = 0;
+     x.play();
+       
     nextPlayer();}}
     });
 
 document.querySelector('.btn-new').addEventListener('click', int);
 function int() {
     roundScore = 0, activePlayer = 0, score=[0,0],againPlaying=true;
+    $(document).ready(function(){
+ 
+   
+        $("p").hide();
+      
+    });
+   stop();
     document.querySelector('#name-0').textContent = 'Player1';
     document.querySelector('#name-1').textContent = 'Player2';
    document.querySelector('#current-0').textContent = '0';
